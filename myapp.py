@@ -1,5 +1,4 @@
 import streamlit as st
-import plotly.express as px
 
 st.set_page_config(page_title="ici de Fresnel")
 st.header("Test")
@@ -8,7 +7,6 @@ st.subheader("Retest")
 import numpy as np
 x = np.linspace(0,10,100)
 import matplotlib.pyplot as plt
-test = px.scatter(x, np.sin(x))
 
 fig,ax = plt.subplots(1,2)
 ax[0].plot(x,np.sin(x))
@@ -27,10 +25,3 @@ elif radio == 'Poly':
     ax[0].plot(x, np.cos(x)+5)
     st.pyplot(fig, clear_figure= True)
 
-with open("flower.jpeg", "rb") as file:
-     btn = st.download_button(
-             label="Download image",
-             data=file,
-             file_name="flower.png",
-             mime="image/png"
-           )
